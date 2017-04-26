@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  BlogDemo
+
+  Created by Benoit PASQUIER on 26/04/2017.
+  Copyright © 2017 Benoit PASQUIER. All rights reserved.
+*/
+
+"Error occured" = "Error occured";
+"error while fetching data" = "An error occured while fetching data. Please pull the table to retry.";
+"Posts" = "Posts";
+"Post detail" = "Post detail";
+"By {author-name}" = "By %@";
+"{comments} count" = "Already %d comments posted";
+"no comments" = "No comments yet, be the first one!" ;

@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Post View Controller-->
+        <!--Posts View Controller-->
         <scene sceneID="2B1-ww-Wa1">
             <objects>
-                <viewController id="ho0-gr-1vv" customClass="PostViewController" customModule="BlogDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ho0-gr-1vv" customClass="PostsViewController" customModule="BlogDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eQa-1a-xzc"/>
                         <viewControllerLayoutGuide type="bottom" id="eKF-nQ-j0M"/>
@@ -44,7 +44,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="23" id="Ygs-cQ-nRz"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -66,8 +66,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="ho0-gr-1vv" id="GxT-m6-g3K"/>
-                                    <outlet property="delegate" destination="ho0-gr-1vv" id="4RG-l7-1ig"/>
+                                    <outlet property="dataSource" destination="ho0-gr-1vv" id="baN-pG-IO2"/>
+                                    <outlet property="delegate" destination="ho0-gr-1vv" id="Y5y-4M-aKA"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -81,12 +81,74 @@
                     </view>
                     <navigationItem key="navigationItem" id="W3a-nE-DAZ"/>
                     <connections>
-                        <outlet property="tableView" destination="NBR-hj-jvp" id="QEd-ir-2Tx"/>
+                        <outlet property="tableView" destination="NBR-hj-jvp" id="X9Q-7k-SH4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0yC-Uf-CUy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="688.79999999999995" y="-136.28185907046478"/>
+        </scene>
+        <!--Post Detail View Controller-->
+        <scene sceneID="6LC-fJ-yEf">
+            <objects>
+                <viewController storyboardIdentifier="PostDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fdY-JX-VRd" customClass="PostDetailViewController" customModule="BlogDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2LY-lb-R9G"/>
+                        <viewControllerLayoutGuide type="bottom" id="qHU-k7-Lfs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hwe-fQ-A0M">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqB-1y-uY2">
+                                <rect key="frame" x="20" y="172.5" width="335" height="18"/>
+                                <fontDescription key="fontDescription" name="Avenir-BookOblique" family="Avenir" pointSize="13"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhv-WR-GRs">
+                                <rect key="frame" x="20" y="80" width="335" height="29"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By Author" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wf6-Tu-lui">
+                                <rect key="frame" x="20" y="114" width="335" height="20"/>
+                                <fontDescription key="fontDescription" name="Avenir-BookOblique" family="Avenir" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXB-T2-q8H">
+                                <rect key="frame" x="20" y="136" width="335" height="16.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Wf6-Tu-lui" firstAttribute="width" secondItem="lhv-WR-GRs" secondAttribute="width" id="5IY-ZX-Hgw"/>
+                            <constraint firstItem="Wf6-Tu-lui" firstAttribute="centerX" secondItem="lhv-WR-GRs" secondAttribute="centerX" id="BGl-oV-1Fq"/>
+                            <constraint firstItem="PXB-T2-q8H" firstAttribute="centerX" secondItem="lhv-WR-GRs" secondAttribute="centerX" id="Et7-N8-cVm"/>
+                            <constraint firstItem="lhv-WR-GRs" firstAttribute="top" secondItem="hwe-fQ-A0M" secondAttribute="topMargin" constant="80" id="Kvf-QE-Rih"/>
+                            <constraint firstItem="kqB-1y-uY2" firstAttribute="centerX" secondItem="lhv-WR-GRs" secondAttribute="centerX" id="RUe-MS-taV"/>
+                            <constraint firstItem="PXB-T2-q8H" firstAttribute="width" secondItem="lhv-WR-GRs" secondAttribute="width" id="SKW-io-jPh"/>
+                            <constraint firstItem="PXB-T2-q8H" firstAttribute="top" secondItem="Wf6-Tu-lui" secondAttribute="bottom" constant="2" id="X04-Pv-3a2"/>
+                            <constraint firstItem="kqB-1y-uY2" firstAttribute="width" secondItem="lhv-WR-GRs" secondAttribute="width" id="g5J-7T-ulg"/>
+                            <constraint firstItem="Wf6-Tu-lui" firstAttribute="top" secondItem="lhv-WR-GRs" secondAttribute="bottom" constant="5" id="hq2-Rs-2dQ"/>
+                            <constraint firstItem="lhv-WR-GRs" firstAttribute="leading" secondItem="hwe-fQ-A0M" secondAttribute="leading" constant="20" id="rN7-4c-IYw"/>
+                            <constraint firstAttribute="trailing" secondItem="lhv-WR-GRs" secondAttribute="trailing" constant="20" id="svN-2q-pqG"/>
+                            <constraint firstItem="kqB-1y-uY2" firstAttribute="top" secondItem="PXB-T2-q8H" secondAttribute="bottom" constant="20" id="uw7-FP-Ahp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="authorLabel" destination="Wf6-Tu-lui" id="zA2-7s-AIb"/>
+                        <outlet property="commentsLabel" destination="PXB-T2-q8H" id="qKv-8l-lMh"/>
+                        <outlet property="descriptionLabel" destination="kqB-1y-uY2" id="2I4-Jh-wye"/>
+                        <outlet property="titleLabel" destination="lhv-WR-GRs" id="dN5-bx-nA9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3RH-OD-rQA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1570" y="-132"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lRY-Jd-szH">

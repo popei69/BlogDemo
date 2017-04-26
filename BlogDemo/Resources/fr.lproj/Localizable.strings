@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  BlogDemo
+
+  Created by Benoit PASQUIER on 26/04/2017.
+  Copyright © 2017 Benoit PASQUIER. All rights reserved.
+*/
+
+"Error occured" = "Une erreur est survenue";
+"error while fetching data" = "Une erreur est survenue durant la requête. Deroulez la vue pour reessayer à nouveau";
+"Posts" = "Postes";
+"Post detail" = "Détail du post";
+"By {author-name}" = "Par %@";
+"{comments} count" = "Déjà %d commentaires postés";
+"no comments" = "Aucun commentaire posté, soyez le premier!" ;
