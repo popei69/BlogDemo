@@ -17,12 +17,6 @@ class PostsViewController: UIViewController, PostControllerDelegate, UserControl
     var posts : [Post] = [] {
         didSet { 
             self.tableView.reloadData()
-            
-            // load users & comments 
-            DispatchQueue.global(qos: .background).async {
-                UserController(delegate: self).fetchUsers()
-                CommentController(delegate: self).fetchComments()
-            }
         }
     }
     
@@ -55,6 +49,12 @@ class PostsViewController: UIViewController, PostControllerDelegate, UserControl
     func reloadPosts(posts: [Post]) {
         self.posts = posts
         self.refreshControl.endRefreshing()
+        
+        // load users & comments 
+        DispatchQueue.global(qos: .background).async {
+            UserController(delegate: self).fetchUsers()
+            CommentController(delegate: self).fetchComments()
+        }
     }
     
     func failFetchPost(error: ErrorResult) {
