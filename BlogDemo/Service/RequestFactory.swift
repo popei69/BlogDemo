@@ -24,7 +24,3 @@ final class RequestFactory {
         return request
     }
 }
-
-protocol RequestDelegate {
-    func networkResult() -> ((Result<Data, ErrorResult>) -> Void)
-}

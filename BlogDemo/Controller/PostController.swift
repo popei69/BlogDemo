@@ -12,7 +12,7 @@ protocol PostControllerDelegate {
     func reloadData(posts: [Post])
 }
 
-final class PostController: RequestDelegate {
+final class PostController: RequestHandler {
     
     let postEndpoint = "https://jsonplaceholder.typicode.com/posts"
     
@@ -24,27 +24,10 @@ final class PostController: RequestDelegate {
     
     func fetchPosts() {
         
-        RequestService().loadPosts(urlString: postEndpoint, completion: networkResult())
+        RequestService().loadData(urlString: postEndpoint, completion: self.networkResult(parser: self.parser))
     }
     
-    func networkResult() -> ((Result<Data, ErrorResult>) -> Void) {
-        return { dataResult in 
-            
-            DispatchQueue.global(qos: .background).async(execute: { 
-                switch dataResult {
-                case .success(let data) : 
-                    print("Network success \(data)")
-                    ParserHelper.parse(data: data, completion: self.parserResult())
-                    break
-                case .failure(let error) :
-                    print("Network error \(error)")
-                    break
-                }
-            })
-        }
-    }
-    
-    func parserResult() -> ((Result<[Post], ErrorResult>) -> Void) {
+    var parser : ((Result<[Post], ErrorResult>) -> Void) {
         return { postsResult in 
             
             DispatchQueue.main.async {

@@ -11,7 +11,7 @@ import Foundation
 final class RequestService {
     
     // todo add model
-    func loadPosts(urlString: String, session: URLSession = URLSession(configuration: .default), completion: @escaping (Result<Data, ErrorResult>) -> Void) {
+    func loadData(urlString: String, session: URLSession = URLSession(configuration: .default), completion: @escaping (Result<Data, ErrorResult>) -> Void) {
         
         guard let url = URL(string: urlString) else {
             completion(.failure(.network(string: "Wrong url format")))
@@ -31,5 +31,28 @@ final class RequestService {
             }
         }
         task.resume()
+    }
+}
+
+class RequestHandler {
+    
+    func networkResult<T: Parceable>(parser: @escaping ((Result<[T], ErrorResult>) -> Void)) -> 
+        ((Result<Data, ErrorResult>) -> Void) {
+            
+            return { dataResult in 
+                
+                DispatchQueue.global(qos: .background).async(execute: { 
+                    switch dataResult {
+                    case .success(let data) : 
+                        print("Network success \(data)")
+                        ParserHelper.parse(data: data, completion: parser)
+                        break
+                    case .failure(let error) :
+                        print("Network error \(error)")
+                        break
+                    }
+                })
+                
+            }
     }
 }

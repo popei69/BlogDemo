@@ -147,8 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				14CBEF811EB00B2200D49E3C /* PostController.swift */,
-				14CBEF831EB00B9D00D49E3C /* PostViewController.swift */,
 				14F638AE1EB0805E000E1856 /* UserController.swift */,
+				14CBEF831EB00B9D00D49E3C /* PostViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
