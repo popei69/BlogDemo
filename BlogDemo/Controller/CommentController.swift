@@ -23,7 +23,7 @@ final class CommentController : RequestHandler {
     }
     
     func fetchComments() {
-        RequestService().loadData(urlString: commentEndpoint, completion: networkResult(parser: self.parser))
+        RequestService().loadData(urlString: commentEndpoint, completion: networkResult(completion: self.parser))
     }
     
     var parser : ((Result<[Comment], ErrorResult>) -> Void) {
@@ -44,4 +44,12 @@ final class CommentController : RequestHandler {
             
         }
     } 
+}
+
+extension CommentController {
+    
+    // add helper to get comments by post id
+    static func commentsByPostId(comments: [Comment], postId: Int) -> [Comment] {
+        return comments.filter({$0.postId == postId})
+    }
 }

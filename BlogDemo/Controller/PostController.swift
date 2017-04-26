@@ -10,6 +10,7 @@ import Foundation
 
 protocol PostControllerDelegate {
     func reloadPosts(posts: [Post])
+    func failFetchPost(error: ErrorResult)
 }
 
 final class PostController: RequestHandler {
@@ -23,8 +24,7 @@ final class PostController: RequestHandler {
     }
     
     func fetchPosts() {
-        
-        RequestService().loadData(urlString: postEndpoint, completion: self.networkResult(parser: self.parser))
+        RequestService().loadData(urlString: postEndpoint, completion: self.networkResult(completion: self.parser))
     }
     
     var parser : ((Result<[Post], ErrorResult>) -> Void) {
@@ -39,6 +39,7 @@ final class PostController: RequestHandler {
                     break
                 case .failure(let error) :
                     print("Parser error \(error)")
+                    self.delegate?.failFetchPost(error: error)
                     break
                 }
             }

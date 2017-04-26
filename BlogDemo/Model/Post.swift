@@ -13,6 +13,9 @@ struct Post {
     let userId : Int
     let title : String
     let body : String
+    
+    var author : User?
+    var comments : [Comment]
 }
 
 extension Post : Parceable {
@@ -24,7 +27,7 @@ extension Post : Parceable {
             let title = dictionary["title"] as? String,
             let body = dictionary["body"] as? String {
             
-            let newPost = Post(id: id, userId: userId, title: title, body: body)
+            let newPost = Post(id: id, userId: userId, title: title, body: body, author: nil, comments: [])
             
             return Result.success(newPost) 
         } else {

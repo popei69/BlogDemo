@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		14CBEF821EB00B2200D49E3C /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CBEF811EB00B2200D49E3C /* PostController.swift */; };
-		14CBEF841EB00B9D00D49E3C /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CBEF831EB00B9D00D49E3C /* PostViewController.swift */; };
+		14CBEF841EB00B9D00D49E3C /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CBEF831EB00B9D00D49E3C /* PostsViewController.swift */; };
 		14CBEF871EB00E2C00D49E3C /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CBEF861EB00E2C00D49E3C /* PostTableViewCell.swift */; };
 		14DADCB31EAFE5D700AE7ACD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DADCB21EAFE5D700AE7ACD /* AppDelegate.swift */; };
 		14DADCB81EAFE5D700AE7ACD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14DADCB61EAFE5D700AE7ACD /* Main.storyboard */; };
@@ -22,6 +22,10 @@
 		14DADCDD1EAFF0B900AE7ACD /* ErrorResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DADCDC1EAFF0B900AE7ACD /* ErrorResult.swift */; };
 		14DADCE11EAFF91F00AE7ACD /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DADCE01EAFF91F00AE7ACD /* Post.swift */; };
 		14DADCE31EAFFA1000AE7ACD /* ParserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DADCE21EAFFA1000AE7ACD /* ParserHelper.swift */; };
+		14E3FEF31EB13B59004AB404 /* LogHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E3FEF21EB13B59004AB404 /* LogHelper.swift */; };
+		14E3FEF81EB14529004AB404 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14E3FEFA1EB14529004AB404 /* Localizable.strings */; };
+		14E6ACF41EB116F300796664 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E6ACF31EB116F300796664 /* Reachability.swift */; };
+		14E6ACF61EB11AFF00796664 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E6ACF51EB11AFF00796664 /* PostDetailViewController.swift */; };
 		14F638AF1EB0805E000E1856 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F638AE1EB0805E000E1856 /* UserController.swift */; };
 		14F638B11EB0808D000E1856 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F638B01EB0808D000E1856 /* User.swift */; };
 		14F638B31EB081D1000E1856 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F638B21EB081D1000E1856 /* Comment.swift */; };
@@ -41,7 +45,7 @@
 
 /* Begin PBXFileReference section */
 		14CBEF811EB00B2200D49E3C /* PostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostController.swift; path = Controller/PostController.swift; sourceTree = "<group>"; };
-		14CBEF831EB00B9D00D49E3C /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostViewController.swift; path = Controller/PostViewController.swift; sourceTree = "<group>"; };
+		14CBEF831EB00B9D00D49E3C /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostsViewController.swift; path = Controller/PostsViewController.swift; sourceTree = "<group>"; };
 		14CBEF861EB00E2C00D49E3C /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostTableViewCell.swift; path = View/PostTableViewCell.swift; sourceTree = "<group>"; };
 		14DADCAF1EAFE5D700AE7ACD /* BlogDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlogDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14DADCB21EAFE5D700AE7ACD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +63,12 @@
 		14DADCDC1EAFF0B900AE7ACD /* ErrorResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorResult.swift; sourceTree = "<group>"; };
 		14DADCE01EAFF91F00AE7ACD /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Post.swift; path = Model/Post.swift; sourceTree = "<group>"; };
 		14DADCE21EAFFA1000AE7ACD /* ParserHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParserHelper.swift; path = Model/ParserHelper.swift; sourceTree = "<group>"; };
+		14E3FEF21EB13B59004AB404 /* LogHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogHelper.swift; path = Resources/LogHelper.swift; sourceTree = "<group>"; };
+		14E3FEF71EB14521004AB404 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		14E3FEF91EB14529004AB404 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		14E3FEFC1EB14535004AB404 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		14E6ACF31EB116F300796664 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Resources/Reachability.swift; sourceTree = "<group>"; };
+		14E6ACF51EB11AFF00796664 /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostDetailViewController.swift; path = Controller/PostDetailViewController.swift; sourceTree = "<group>"; };
 		14F638AE1EB0805E000E1856 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserController.swift; path = Controller/UserController.swift; sourceTree = "<group>"; };
 		14F638B01EB0808D000E1856 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Model/User.swift; sourceTree = "<group>"; };
 		14F638B21EB081D1000E1856 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Comment.swift; path = Model/Comment.swift; sourceTree = "<group>"; };
@@ -113,6 +123,7 @@
 		14DADCB11EAFE5D700AE7ACD /* BlogDemo */ = {
 			isa = PBXGroup;
 			children = (
+				14E6ACF21EB116DC00796664 /* Resources */,
 				14CBEF851EB00E0900D49E3C /* Views */,
 				14DADCDF1EAFF88A00AE7ACD /* Models */,
 				14DADCDE1EAFF6B000AE7ACD /* Controllers */,
@@ -169,6 +180,16 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		14E6ACF21EB116DC00796664 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				14E6ACF31EB116F300796664 /* Reachability.swift */,
+				14E3FEF21EB13B59004AB404 /* LogHelper.swift */,
+				14E3FEFA1EB14529004AB404 /* Localizable.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		14F638B81EB0906A000E1856 /* Result */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,7 +202,8 @@
 		14F638B91EB0907C000E1856 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				14CBEF831EB00B9D00D49E3C /* PostViewController.swift */,
+				14CBEF831EB00B9D00D49E3C /* PostsViewController.swift */,
+				14E6ACF51EB11AFF00796664 /* PostDetailViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -244,6 +266,7 @@
 				TargetAttributes = {
 					14DADCAE1EAFE5D700AE7ACD = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = XG3URJ46HG;
 						ProvisioningStyle = Automatic;
 					};
 					14DADCC51EAFE5D700AE7ACD = {
@@ -260,6 +283,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 14DADCA61EAFE5D700AE7ACD;
 			productRefGroup = 14DADCB01EAFE5D700AE7ACD /* Products */;
@@ -278,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14DADCC01EAFE5D700AE7ACD /* LaunchScreen.storyboard in Resources */,
+				14E3FEF81EB14529004AB404 /* Localizable.strings in Resources */,
 				14DADCBD1EAFE5D700AE7ACD /* Assets.xcassets in Resources */,
 				14DADCB81EAFE5D700AE7ACD /* Main.storyboard in Resources */,
 			);
@@ -303,12 +328,15 @@
 				14F638B31EB081D1000E1856 /* Comment.swift in Sources */,
 				14DADCD91EAFEA6A00AE7ACD /* RequestFactory.swift in Sources */,
 				14DADCE11EAFF91F00AE7ACD /* Post.swift in Sources */,
+				14E6ACF41EB116F300796664 /* Reachability.swift in Sources */,
 				14F638B71EB0904D000E1856 /* RequestHandler.swift in Sources */,
 				14DADCDD1EAFF0B900AE7ACD /* ErrorResult.swift in Sources */,
-				14CBEF841EB00B9D00D49E3C /* PostViewController.swift in Sources */,
+				14CBEF841EB00B9D00D49E3C /* PostsViewController.swift in Sources */,
 				14F638AF1EB0805E000E1856 /* UserController.swift in Sources */,
 				14CBEF821EB00B2200D49E3C /* PostController.swift in Sources */,
 				14DADCE31EAFFA1000AE7ACD /* ParserHelper.swift in Sources */,
+				14E6ACF61EB11AFF00796664 /* PostDetailViewController.swift in Sources */,
+				14E3FEF31EB13B59004AB404 /* LogHelper.swift in Sources */,
 				14DADCB31EAFE5D700AE7ACD /* AppDelegate.swift in Sources */,
 				14DADCBB1EAFE5D700AE7ACD /* BlogDemo.xcdatamodeld in Sources */,
 				14DADCD71EAFE8E100AE7ACD /* RequestService.swift in Sources */,
@@ -347,8 +375,19 @@
 			isa = PBXVariantGroup;
 			children = (
 				14DADCBF1EAFE5D700AE7ACD /* Base */,
+				14E3FEF71EB14521004AB404 /* fr */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		14E3FEFA1EB14529004AB404 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14E3FEF91EB14529004AB404 /* Base */,
+				14E3FEFC1EB14535004AB404 /* fr */,
+			);
+			name = Localizable.strings;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -358,6 +397,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -394,7 +434,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -407,6 +447,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -437,7 +478,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -449,7 +490,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XG3URJ46HG;
 				INFOPLIST_FILE = BlogDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.benoitpasquier.BlogDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -461,7 +504,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XG3URJ46HG;
 				INFOPLIST_FILE = BlogDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.benoitpasquier.BlogDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

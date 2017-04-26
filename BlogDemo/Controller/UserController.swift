@@ -23,7 +23,7 @@ final class UserController : RequestHandler {
     }
     
     func fetchUsers() {
-        RequestService().loadData(urlString: userEndpoint, completion: self.networkResult(parser: self.parser))
+        RequestService().loadData(urlString: userEndpoint, completion: self.networkResult(completion: self.parser))
     }
     
     var parser : ((Result<[User], ErrorResult>) -> Void) {
@@ -43,5 +43,13 @@ final class UserController : RequestHandler {
             }
             
         }
+    }
+}
+
+extension UserController {
+
+    // add helper to get user by id
+    static func userById(users: [User], id: Int) -> User? {
+        return users.first(where: {$0.id == id})
     }
 }
