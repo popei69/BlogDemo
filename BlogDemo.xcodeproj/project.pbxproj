@@ -16,12 +16,15 @@
 		14DADCBD1EAFE5D700AE7ACD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14DADCBC1EAFE5D700AE7ACD /* Assets.xcassets */; };
 		14DADCC01EAFE5D700AE7ACD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14DADCBE1EAFE5D700AE7ACD /* LaunchScreen.storyboard */; };
 		14DADCCB1EAFE5D700AE7ACD /* BlogDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DADCCA1EAFE5D700AE7ACD /* BlogDemoTests.swift */; };
-		14DADCD71EAFE8E100AE7ACD /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DADCD61EAFE8E100AE7ACD /* PostService.swift */; };
+		14DADCD71EAFE8E100AE7ACD /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DADCD61EAFE8E100AE7ACD /* RequestService.swift */; };
 		14DADCD91EAFEA6A00AE7ACD /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DADCD81EAFEA6A00AE7ACD /* RequestFactory.swift */; };
 		14DADCDB1EAFEC6300AE7ACD /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DADCDA1EAFEC6300AE7ACD /* Result.swift */; };
 		14DADCDD1EAFF0B900AE7ACD /* ErrorResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DADCDC1EAFF0B900AE7ACD /* ErrorResult.swift */; };
 		14DADCE11EAFF91F00AE7ACD /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DADCE01EAFF91F00AE7ACD /* Post.swift */; };
 		14DADCE31EAFFA1000AE7ACD /* ParserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DADCE21EAFFA1000AE7ACD /* ParserHelper.swift */; };
+		14F638AF1EB0805E000E1856 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F638AE1EB0805E000E1856 /* UserController.swift */; };
+		14F638B11EB0808D000E1856 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F638B01EB0808D000E1856 /* User.swift */; };
+		14F638B31EB081D1000E1856 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F638B21EB081D1000E1856 /* Comment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,12 +51,15 @@
 		14DADCC61EAFE5D700AE7ACD /* BlogDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlogDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14DADCCA1EAFE5D700AE7ACD /* BlogDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogDemoTests.swift; sourceTree = "<group>"; };
 		14DADCCC1EAFE5D700AE7ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		14DADCD61EAFE8E100AE7ACD /* PostService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostService.swift; path = Service/PostService.swift; sourceTree = "<group>"; };
+		14DADCD61EAFE8E100AE7ACD /* RequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestService.swift; path = Service/RequestService.swift; sourceTree = "<group>"; };
 		14DADCD81EAFEA6A00AE7ACD /* RequestFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestFactory.swift; path = Service/RequestFactory.swift; sourceTree = "<group>"; };
 		14DADCDA1EAFEC6300AE7ACD /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Service/Result.swift; sourceTree = "<group>"; };
 		14DADCDC1EAFF0B900AE7ACD /* ErrorResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorResult.swift; sourceTree = "<group>"; };
 		14DADCE01EAFF91F00AE7ACD /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Post.swift; path = Model/Post.swift; sourceTree = "<group>"; };
 		14DADCE21EAFFA1000AE7ACD /* ParserHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParserHelper.swift; path = Model/ParserHelper.swift; sourceTree = "<group>"; };
+		14F638AE1EB0805E000E1856 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserController.swift; path = Controller/UserController.swift; sourceTree = "<group>"; };
+		14F638B01EB0808D000E1856 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Model/User.swift; sourceTree = "<group>"; };
+		14F638B21EB081D1000E1856 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Comment.swift; path = Model/Comment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +135,7 @@
 		14DADCD51EAFE61100AE7ACD /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				14DADCD61EAFE8E100AE7ACD /* PostService.swift */,
+				14DADCD61EAFE8E100AE7ACD /* RequestService.swift */,
 				14DADCD81EAFEA6A00AE7ACD /* RequestFactory.swift */,
 				14DADCDA1EAFEC6300AE7ACD /* Result.swift */,
 				14DADCDC1EAFF0B900AE7ACD /* ErrorResult.swift */,
@@ -142,6 +148,7 @@
 			children = (
 				14CBEF811EB00B2200D49E3C /* PostController.swift */,
 				14CBEF831EB00B9D00D49E3C /* PostViewController.swift */,
+				14F638AE1EB0805E000E1856 /* UserController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -151,6 +158,8 @@
 			children = (
 				14DADCE01EAFF91F00AE7ACD /* Post.swift */,
 				14DADCE21EAFFA1000AE7ACD /* ParserHelper.swift */,
+				14F638B01EB0808D000E1856 /* User.swift */,
+				14F638B21EB081D1000E1856 /* Comment.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -258,17 +267,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14F638B11EB0808D000E1856 /* User.swift in Sources */,
 				14CBEF871EB00E2C00D49E3C /* PostTableViewCell.swift in Sources */,
 				14DADCDB1EAFEC6300AE7ACD /* Result.swift in Sources */,
+				14F638B31EB081D1000E1856 /* Comment.swift in Sources */,
 				14DADCD91EAFEA6A00AE7ACD /* RequestFactory.swift in Sources */,
 				14DADCE11EAFF91F00AE7ACD /* Post.swift in Sources */,
 				14DADCDD1EAFF0B900AE7ACD /* ErrorResult.swift in Sources */,
 				14CBEF841EB00B9D00D49E3C /* PostViewController.swift in Sources */,
+				14F638AF1EB0805E000E1856 /* UserController.swift in Sources */,
 				14CBEF821EB00B2200D49E3C /* PostController.swift in Sources */,
 				14DADCE31EAFFA1000AE7ACD /* ParserHelper.swift in Sources */,
 				14DADCB31EAFE5D700AE7ACD /* AppDelegate.swift in Sources */,
 				14DADCBB1EAFE5D700AE7ACD /* BlogDemo.xcdatamodeld in Sources */,
-				14DADCD71EAFE8E100AE7ACD /* PostService.swift in Sources */,
+				14DADCD71EAFE8E100AE7ACD /* RequestService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

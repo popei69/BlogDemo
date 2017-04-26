@@ -14,6 +14,8 @@ protocol PostControllerDelegate {
 
 final class PostController: RequestDelegate {
     
+    let postEndpoint = "https://jsonplaceholder.typicode.com/posts"
+    
     let delegate : PostControllerDelegate?
     
     init(delegate : PostControllerDelegate?) {
@@ -22,7 +24,7 @@ final class PostController: RequestDelegate {
     
     func fetchPosts() {
         
-        PostService().loadPosts(completion: self.networkResult())
+        RequestService().loadPosts(urlString: postEndpoint, completion: networkResult())
     }
     
     func networkResult() -> ((Result<Data, ErrorResult>) -> Void) {

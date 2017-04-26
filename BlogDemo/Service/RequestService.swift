@@ -8,14 +8,12 @@
 
 import Foundation
 
-final class PostService {
-    
-    let endpoint = "https://jsonplaceholder.typicode.com/posts"
+final class RequestService {
     
     // todo add model
-    func loadPosts(session: URLSession = URLSession(configuration: .default), completion: @escaping (Result<Data, ErrorResult>) -> Void) {
+    func loadPosts(urlString: String, session: URLSession = URLSession(configuration: .default), completion: @escaping (Result<Data, ErrorResult>) -> Void) {
         
-        guard let url = URL(string: endpoint) else {
+        guard let url = URL(string: urlString) else {
             completion(.failure(.network(string: "Wrong url format")))
             return
         }

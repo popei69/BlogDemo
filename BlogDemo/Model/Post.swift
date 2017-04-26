@@ -17,7 +17,7 @@ struct Post {
 
 extension Post : Parceable {
     
-    static func parseInto(dictionary: [String : AnyObject]) -> Result<Post, ErrorResult> {
+    static func parseObject(dictionary: [String : AnyObject]) -> Result<Post, ErrorResult> {
         
         if let id = dictionary["id"] as? Int,
             let userId = dictionary["userId"] as? Int,

@@ -9,7 +9,7 @@
 import Foundation
 
 protocol Parceable {
-   static func parseInto(dictionary: [String: AnyObject]) -> Result<Self, ErrorResult>
+   static func parseObject(dictionary: [String: AnyObject]) -> Result<Self, ErrorResult>
 }
 
 final class ParserHelper {
@@ -28,7 +28,7 @@ final class ParserHelper {
                     if let dictionary = object as? [String : AnyObject] {
                         
                         // check foreach dictionary if parseable
-                        switch T.parseInto(dictionary: dictionary) {
+                        switch T.parseObject(dictionary: dictionary) {
                         case .failure(_): 
                             continue
                         case .success(let newModel):
