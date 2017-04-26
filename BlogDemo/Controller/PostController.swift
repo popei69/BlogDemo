@@ -21,6 +21,9 @@ final class PostController: RequestHandler {
     
     init(delegate : PostControllerDelegate?) {
         self.delegate = delegate
+        super.init()
+        
+        startNotifier()
     }
     
     func fetchPosts() {
@@ -46,5 +49,41 @@ final class PostController: RequestHandler {
             
         }
     }
+    
+}
 
+extension PostController : RequestHandlerReachability {
+    
+    func startNotifier() {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.reachabilityStatusChanged),name: ReachabilityChangedNotification,object: reachability)
+        
+        do{
+            try reachability.startNotifier()
+            print("Start reachability notifier")
+        }catch{
+            print("could not start reachability notifier")
+        }
+    }
+    
+    func stopNotifier() {
+        reachability.stopNotifier()
+        NotificationCenter.default.removeObserver(self, name: ReachabilityChangedNotification, object: reachability)
+        print("Stop reachability notifier")
+    }
+    
+    @objc func reachabilityStatusChanged(notitification notification: Notification) {
+        
+        guard let reachability = notification.object as? Reachability else { return }
+        
+        if reachability.isReachable {
+            if reachability.isReachableViaWiFi {
+                print("Reachable via WiFi")
+            } else {
+                print("Reachable via Cellular")
+            }
+        } else {
+            print("Network not reachable")
+        }
+    }
 }
