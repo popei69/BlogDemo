@@ -9,7 +9,7 @@
 import Foundation
 
 protocol UserControllerDelegate {
-    func reloadData(users: [User])
+    func reloadUsers(users: [User])
 }
 
 final class UserController : RequestHandler {
@@ -34,7 +34,7 @@ final class UserController : RequestHandler {
                 case .success(let users) :
                     // reload data
                     print("Parser success \(users)")
-                    self.delegate?.reloadData(users: users)
+                    self.delegate?.reloadUsers(users: users)
                     break
                 case .failure(let error) :
                     print("Parser error \(error)")

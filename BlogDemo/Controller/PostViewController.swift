@@ -8,14 +8,26 @@
 
 import UIKit
 
-class PostViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, PostControllerDelegate {
+class PostViewController: UIViewController, PostControllerDelegate, UserControllerDelegate, CommentControllerDelegate{
     
     @IBOutlet weak var tableView: UITableView!
     let kReusableIdentifier = "PostTableViewCell"
     
     var posts : [Post] = [] {
-        didSet { self.tableView.reloadData() }
+        didSet { 
+            self.tableView.reloadData()
+            
+            // load users now 
+            DispatchQueue.global(qos: .background).async {
+                UserController(delegate: self).fetchUsers()
+                CommentController(delegate: self).fetchComments()
+            }
+            
+        }
     }
+    
+    var users : [User] = []
+    var comments : [Comment] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +43,23 @@ class PostViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Dispose of any resources that can be recreated.
     }
     
-    func reloadData(posts: [Post]) {
+    func reloadPosts(posts: [Post]) {
         self.posts = posts
     }
     
+    func reloadUsers(users: [User]) {
+        self.users = users
+    }
+    
+    func reloadComments(comments: [Comment]) {
+        self.comments = comments
+    }
+    
+    
+}
 
+extension PostViewController : UITableViewDelegate, UITableViewDataSource {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -52,17 +76,13 @@ class PostViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        print("Post selected: \(posts[indexPath.row].title)")
+        let post = posts[indexPath.row]
+        
+        if let user = users.first(where: {$0.id == post.userId}) {
+            print("Post selected: \(post.title) from \(user.name)")
+        }
+        
+        let tmpComments = comments.filter({$0.postId == post.id})
+        print("There is \(tmpComments.count) comments on this post")
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 protocol PostControllerDelegate {
-    func reloadData(posts: [Post])
+    func reloadPosts(posts: [Post])
 }
 
 final class PostController: RequestHandler {
@@ -35,7 +35,7 @@ final class PostController: RequestHandler {
                 case .success(let posts) :
                     // reload data
                     print("Parser success \(posts)")
-                    self.delegate?.reloadData(posts: posts)
+                    self.delegate?.reloadPosts(posts: posts)
                     break
                 case .failure(let error) :
                     print("Parser error \(error)")
